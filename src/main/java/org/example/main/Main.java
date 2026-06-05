@@ -6,6 +6,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        System.out.println(context.getBean("Riki", Parrot.class).getName());
+        System.out.println(context.getBean(Parrot.class).getName());
     }
 }
