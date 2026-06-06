@@ -1,15 +1,11 @@
 package org.example.main;
 
+import jakarta.annotation.PostConstruct;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Parrot {
     private String name;
-
-    public Parrot(){
-        this.name = "Dummy parrot";
-    }
-
-    public Parrot(String name){
-        this.name = name;
-    }
 
     public String getName() {
         return name;
@@ -17,5 +13,10 @@ public class Parrot {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @PostConstruct
+    public void init(){
+        this.setName("Coco");
     }
 }
