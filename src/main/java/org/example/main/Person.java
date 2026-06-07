@@ -1,7 +1,11 @@
 package org.example.main;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Person {
     private String name;
+
+    @Autowired
     private Parrot parrot;
 
     public String getName() {
