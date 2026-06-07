@@ -26,12 +26,12 @@ public class ProjectConfig {
         return p;
     }
 
-    @Bean
-    Person person(@Qualifier("parrot2") Parrot parrot){
-        Person p = new Person();
-        p.setName("Shlok");
-        p.setParrot(parrot);
-        return p;
-    }
+//    @Bean
+//    Person person(@Qualifier("parrot2") Parrot parrot){
+//        Person p = new Person();
+//        p.setName("Shlok");
+//        p.setParrot(parrot);
+//        return p;
+//    }
 
 }
