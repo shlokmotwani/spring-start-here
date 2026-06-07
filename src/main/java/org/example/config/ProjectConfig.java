@@ -2,6 +2,7 @@ package org.example.config;
 
 import org.example.main.Parrot;
 import org.example.main.Person;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,16 +13,25 @@ import org.springframework.context.annotation.Primary;
 public class ProjectConfig {
 
     @Bean
-    public Parrot parrot(){
+    Parrot parrot1(){
         Parrot p = new Parrot();
-        p.setName("Kiki");
+        p.setName("Coco");
         return p;
     }
 
     @Bean
-    public Person person(){
-        Person p = new Person();
-        p.setName("Shlok");
+    Parrot parrot2(){
+        Parrot p = new Parrot();
+        p.setName("Miki");
         return p;
     }
+
+    @Bean
+    Person person(@Qualifier("parrot2") Parrot parrot){
+        Person p = new Person();
+        p.setName("Shlok");
+        p.setParrot(parrot);
+        return p;
+    }
+
 }

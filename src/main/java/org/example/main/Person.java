@@ -1,12 +1,15 @@
 package org.example.main;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 public class Person {
     private String name;
-
-    @Autowired
     private Parrot parrot;
+
+    public Person(){
+        System.out.println("Person created!");
+    }
 
     public String getName() {
         return name;
