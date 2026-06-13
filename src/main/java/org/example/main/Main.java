@@ -1,12 +1,22 @@
 package org.example.main;
 
 import org.example.config.ProjectConfig;
+import org.example.model.Comment;
+import org.example.proxies.EmailCommentNotificationProxy;
+import org.example.repositories.DBCommentRepository;
+import org.example.services.CommentService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
+        var commentRepository = new DBCommentRepository();
+        var commentProxy = new EmailCommentNotificationProxy();
+        var commentService = new CommentService(commentRepository, commentProxy);
 
-        System.out.println(context.getBean(Person.class).getParrot().getName());
+        Comment comment = new Comment();
+        comment.setAuthor("Shlok");
+        comment.setText("I am learning Spring");
+
+        commentService.publishComment(comment);
     }
 }
