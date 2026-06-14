@@ -15,7 +15,5 @@ public class Main {
         Comment comment = new Comment();
         comment.setAuthor("Shlok");
         comment.setText("I am learning Spring");
-
-        commentService.publishComment(comment);
     }
 }
