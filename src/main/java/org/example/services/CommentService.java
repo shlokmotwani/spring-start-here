@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 @Service
-@Lazy
 public class CommentService {
     private final CommentRepository commentRepository;
     private final CommentNotificationProxy commentNotificationProxy;
@@ -22,5 +21,9 @@ public class CommentService {
     public void publishComment(Comment comment){
         commentRepository.storeComment(comment);
         commentNotificationProxy.sendComment(comment);
+    }
+
+    public CommentRepository getCommentRepository(){
+        return this.commentRepository;
     }
 }
