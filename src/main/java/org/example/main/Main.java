@@ -9,9 +9,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
     public static void main(String[] args) {
-        var commentRepository = new DBCommentRepository();
-        var commentProxy = new EmailCommentNotificationProxy();
-        var commentService = new CommentService(commentRepository, commentProxy);
+        var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
+        CommentService commentService = context.getBean(CommentService.class);
 
         Comment comment = new Comment();
         comment.setAuthor("Shlok");

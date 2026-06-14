@@ -9,29 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 @Configuration
-@ComponentScan(basePackages = "org.example.main")
+@ComponentScan(basePackages = {"org.example.services", "org.example.repositories", "org.example.proxies"})
 public class ProjectConfig {
-
-    @Bean
-    Parrot parrot1(){
-        Parrot p = new Parrot();
-        p.setName("Coco");
-        return p;
-    }
-
-    @Bean
-    Parrot parrot2(){
-        Parrot p = new Parrot();
-        p.setName("Miki");
-        return p;
-    }
-
-//    @Bean
-//    Person person(@Qualifier("parrot2") Parrot parrot){
-//        Person p = new Person();
-//        p.setName("Shlok");
-//        p.setParrot(parrot);
-//        return p;
-//    }
 
 }
