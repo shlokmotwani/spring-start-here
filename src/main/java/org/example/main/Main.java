@@ -17,6 +17,7 @@ public class Main {
         CommentRepository cr2 = context.getBean(UserService.class).getCommentRepository();
 
         System.out.println(cr1 == cr2);
+        System.out.println(context.getBean(UserService.class).getClass());
 
 
 //        Comment comment = new Comment();
