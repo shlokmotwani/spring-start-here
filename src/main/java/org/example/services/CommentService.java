@@ -21,10 +21,11 @@ public class CommentService {
 //        System.out.println("CommentService instance created!!!");
     }
 
-    public void publishComment(Comment comment){
+    public String publishComment(Comment comment){
 //        commentRepository.storeComment(comment);
 //        commentNotificationProxy.sendComment(comment);
         logger.info("Publishing comment: " + comment.getText());
+        return "SUCCESS";
     }
 
 //    public CommentRepository getCommentRepository(){
