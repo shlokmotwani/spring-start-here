@@ -13,12 +13,6 @@ public class Main {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
         CommentService commentService = context.getBean(CommentService.class);
-//        CommentRepository cr1 = commentService.getCommentRepository();
-//        CommentRepository cr2 = context.getBean(UserService.class).getCommentRepository();
-
-//        System.out.println(cr1 == cr2);
-//        System.out.println(context.getBean(UserService.class).getClass());
-
 
         Comment comment = new Comment();
         comment.setAuthor("Shlok");
