@@ -24,6 +24,7 @@ public class Main {
         comment.setAuthor("Shlok");
         comment.setText("I am learning Spring");
 
-        commentService.publishComment(comment);
+        Object returnedObj = commentService.publishComment(comment);
+        System.out.println("Returned Value: " + returnedObj);
     }
 }
